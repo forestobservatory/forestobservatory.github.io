@@ -53,7 +53,6 @@
     <link rel="icon" type="image/x-icon" href="{{ '/favicon.png' | relative_url }}">
     <link rel="shortcut icon" sizes="196x196" href="{{ '/favicon-196.png' | relative_url }}">
     <link rel="apple-touch-icon" href="{{ '/favicon-196.png' | relative_url }}">
-    <!-- <link rel="mask-icon" href="{{ '/assets/site/favicon-mask.svg' | relative_url }}" color="{{ site.salo-red }}"> -->
     {%- if page.hero-image -%}
     <style>
         {%- assign hero-image-url = "/assets/site/" | append: page.hero-image -%}
@@ -78,7 +77,7 @@
 <nav id="site-header">
     {%- assign site-logo-url = '/assets/site/symbol-white.svg' | relative_url -%}
     {%- if body-class contains "dark-header" -%}
-        {%- assign site-logo-url = '/assets/site/symbol.svg' | relative_url -%}
+        {%- assign site-logo-url = '/assets/site/symbol-white.svg' | relative_url -%}
     {%- endif -%}
     <a href="{{ site.baseurl }}/"><img src="{{ site-logo-url }}"/></a>
 
@@ -91,8 +90,9 @@
     <div id="header-links">
         <a href="{{ site.baseurl }}/"><span>Home</span></a>
         <a href="{{ site.baseurl }}{% link _pages/about.md %}" class="about"><span>About</span></a>
-        <a href="{{ site.baseurl }}{% link _pages/software.md %}" class="projects"><span>Open Software</span></a>
-        <a href="{{ site.baseurl }}{% link blog/index.html %}" class="blog"><span>Updates</span></a>
+        <a href="{{ site.baseurl }}{% link _pages/data.md %}" class="data"><span>Open Data</span></a>
+        <a href="{{ site.baseurl }}{% link _pages/software.md %}" class="software"><span>Open Software</span></a>
+        <a href="{{ site.baseurl }}{% link blog/index.html %}" class="blog"><span>News</span></a>
     </div>
 </nav>
 <div>{% comment %}Parallax wrapper{% endcomment %}
@@ -125,7 +125,9 @@
     <nav>
         <div>Observatory</div>
         <a href="{{ site.baseurl }}{% link _pages/about.md %}">About</a>
-        <a href="{{ site.baseurl }}{% link blog/index.html %}">Announcements</a>
+        <a href="{{ site.baseurl }}{% link blog/index.html %}">News</a>
+        <a href="{{ site.baseurl }}{% link _pages/terms-of-use.md %}">Terms of Use</a>
+        <a href="{{ site.baseurl }}{% link _pages/api-terms.md %}">API terms</a>
         </nav>
     <nav>
         <div>Open Data</div>

@@ -44,7 +44,7 @@ a {
         text-underline-offset: .2em;
     }
     &:visited {
-        color: $cfo-yellow;
+        color: $cfo-orange;
     }
 }
 
@@ -446,7 +446,7 @@ body {
         @include breakpoint(tablet) {
             #header-links a:link, #header-links a:visited {
                 transition: color $header-animation-timing;
-                color: $brand-color;
+                color: $cfo-orange;
             }
         }
     }

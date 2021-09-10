@@ -32,6 +32,16 @@ article {
         text-align: right;
         margin-top: -1rem;
     }
+    a {
+      color: $cfo-green;
+      &:hover {
+          text-decoration: underline;
+          text-underline-offset: .2em;
+      }
+      &:visited {
+          color: $cfo-black;
+      }
+    }
 }
 
 nav.pagination {
