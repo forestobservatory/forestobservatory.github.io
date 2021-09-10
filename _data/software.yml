@@ -1,5 +1,5 @@
 -
-  name: Forest Observatory API
+  name: API
   url: https://github.com/forestobservatory/cfo-api
   icon: /assets/software/icon-cfo-api.png
   description: Python wrappers for accessing Forest Observatory data via the Public API.
@@ -15,6 +15,6 @@
   description: Global land cover reference spectra, and tools for working with them in Earth Engine.
 -
   name: Giants
-  url: https://github.com/forestobservatory/giants
+  url: https://github.com/forestobservatory/cfo-big-trees
   icon: /assets/software/icon-giants.png
   description: Basic machine learning optimization support for scikit-learn.
