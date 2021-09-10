@@ -1,5 +1,5 @@
 ---
-title: High Resolution Forest Mapping
+title: High Resolution Forest Data
 hero-image: hero-strix.jpg
 page-class: projects
 custom-css: thumbnail-list
