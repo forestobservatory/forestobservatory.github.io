@@ -1,0 +1,79 @@
+---
+---
+@import "theme";
+
+.container {
+    @include standard-block-behavior(passthrough);
+    display: flex;
+    flex-direction: column-reverse;
+    @include breakpoint(tablet) {
+        flex-direction: row;
+    }
+}
+
+article {
+    margin-top: 3rem;
+    &:first-child {
+        margin-top: 0;
+    }
+
+    header {
+        h1, h3 {
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    .read-more {
+        font-family: $header-font;
+        font-size: $small-body-text-size;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        text-align: right;
+        margin-top: -1rem;
+    }
+}
+
+nav.pagination {
+    @include standard-block-behavior;
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    button {
+        margin: 0;
+        padding-left: $button-top-bottom-padding;
+        padding-right: $button-top-bottom-padding;
+        @include breakpoint(desktop) {
+            padding-left: $button-left-right-padding;
+            padding-right: $button-left-right-padding;
+        }
+    }
+}
+
+body.first-page {
+    #twitter-embed {
+        padding-left: $minimum-side-padding;
+        padding-right: $minimum-side-padding;
+
+        @include breakpoint(tablet) {
+            width: 25%;
+            padding-left: $tablet-side-padding;
+            padding-right: 0;
+        }
+    }
+
+    @include breakpoint(tablet) {
+        #posts {
+            padding-top: 10px; // This matches the padding of the header in the tweet embed.
+            padding-left: $tablet-side-padding;
+        }
+
+        article header {
+            h1, h3 {
+                text-align: initial;
+            }
+        }
+    }
+}

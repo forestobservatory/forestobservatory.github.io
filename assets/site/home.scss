@@ -1,0 +1,326 @@
+---
+---
+@charset "utf-8";
+
+@import "theme";
+
+body {
+    > div > header > div {
+        box-sizing: border-box;
+        padding-bottom: 0;
+
+        align-items: center;
+        justify-content: center;
+
+        > img {
+            width: calc(100% - #{$minimum-side-padding});
+            max-width: 18em;
+            @include breakpoint(tablet) {
+                max-width: 19em;
+            }
+            @include breakpoint(desktop) {
+                max-width: 21em;
+            }
+        }
+        > h2 {
+            text-align: center;
+            text-transform: none;
+            line-height: 1.2;
+            width: 100%;
+            padding-left: 0;
+            margin-top: .8rem;
+
+            font-size: 1.75em;
+            letter-spacing: -1px;
+            @include breakpoint(tiny) {
+                font-size: 1.5em;
+            }
+            @include breakpoint(tablet) {
+                font-size: 2.5em;
+                letter-spacing: initial;
+            }
+        }
+    }
+}
+
+main {
+
+    h3 {
+        span {
+            color: $cfo-green;
+        }
+
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    #figures {
+        @include breakpoint(tablet) {
+            section {
+                display: flex;
+
+                margin: 3rem auto 0;
+                box-sizing: border-box;
+                max-width: 40rem;
+                padding-left: $minimum-side-padding;
+                padding-right: $minimum-side-padding;
+
+                > div:nth-child(2) {
+                    border-image: linear-gradient(to bottom, white, #7b7b7b 20%,  #7b7b7b 80%, white) 0 0 0 1 / 0 0 0 1px;
+                    border-left: 1px solid;
+                    padding-left: 0;
+                    @include breakpoint(desktop) {
+                        padding-left: 2rem - $minimum-side-padding;
+                    }
+                }
+            }
+
+            section.reversed > div:nth-child(2) {
+                border-image: linear-gradient(to bottom, white, #7b7b7b 20%,  #7b7b7b 80%, white) 0 1 0 0 / 0 1px 0 0;
+                border-right: 1px solid;
+                padding-left: 0;
+                padding-right: 2rem - $minimum-side-padding;
+            }
+
+            h3 {
+                text-align: initial;
+            }
+        }
+
+        .image {
+            margin: 3rem auto 0;
+            width: 18rem;
+            height: 12rem;
+            position: relative;
+
+            @include breakpoint(tablet) {
+                margin-top: 0;
+            }
+
+            background-image: url("{{ '/assets/site/salo-home-desktop-alt-images-abstract-3d-dot-pattern-1.png' | relative_url }}");
+            background-size: auto 90%;
+            background-position: left center;
+            background-repeat: no-repeat;
+
+            > img {
+                height: 100%;
+                margin-left: 4rem;
+                margin-right: 1rem;
+
+                @include breakpoint(desktop) {
+                    margin-left: 4rem;
+                    margin-right: 3rem;
+                }
+
+                display: block;
+                border-radius: 100%;
+            }
+
+            div {
+                position: absolute;
+                left: 13%;
+                top: -3%;
+                width: 5rem;
+                height: 5rem;
+
+                background-image: url("{{ '/assets/site/salo-home-desktop-alt-images-oval@2x.png' | relative_url }}");
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+
+                img {
+                    display: block;
+                    position: absolute;
+                    width: 70%;
+                    height: 70%;
+                    background-repeat: no-repeat;
+                    top: 12%;
+                    left: 11.5%;
+
+                    object-fit: contain;
+                }
+            }
+        }
+
+        .reversed {
+            @include breakpoint(tablet) {
+                flex-direction: row-reverse;
+            }
+
+            .image {
+                transform: scaleX(-1);
+                width: 19rem;
+
+                > img {
+                    transform: scaleX(-1);
+                }
+                div {
+                    left: 69%;
+
+                    img {
+                        transform: scaleX(-1);
+                    }
+                }
+            }
+        }
+    }
+
+    #learn-more {
+        position: relative;
+        margin-top: 3rem;
+
+        > div:nth-child(1) {
+            display: flex;
+            justify-content: space-evenly;
+
+            .image-container {
+                width: 25%;
+                height: 40vw;
+                min-height: 5em;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        > a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $cfo-white;
+            font-size: 1.5em;
+            box-sizing: border-box;
+            padding: $minimum-side-padding;
+            line-height: 1.2;
+
+            @include breakpoint(tablet) {
+                font-size: 2em;
+            }
+        }
+    }
+
+    #announcements {
+        background-color: $brand-color;
+        padding: 3rem 0;
+        h2 {
+            margin-top: 0;
+            color: $cfo-white;
+        }
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            padding: 0 $minimum-side-padding;
+
+            @include breakpoint(tablet) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        li {
+            background-color: $background-color;
+            box-sizing: border-box;
+            padding: 1em $minimum-side-padding 0;
+
+            @include breakpoint(tablet) {
+                width: 48%;
+            }
+
+            h1 {
+                text-align: left;
+                font-size: 1.2em;
+                line-height: 1.3;
+                margin: 0;
+            }
+            h3 {
+                text-align: left;
+                font-size: .8em;
+                margin: 0 0 .25em;
+            }
+            a.read-more {
+                font-size: .8em;
+                text-transform: uppercase;
+                letter-spacing: .1em;
+            }
+        }
+
+    }
+
+    #partners {
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2rem 1rem 4rem;
+            justify-content: center;
+
+            @include breakpoint(tiny) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        a {
+            display: block;
+            max-width: 150px;
+            height: 75px;
+            position: relative;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+
+            img {
+                max-width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+                filter: grayscale(.8) opacity(.9);
+            }
+        }
+    }
+
+    #press {
+        padding-top: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: $minimum-side-padding;
+        padding-right: $minimum-side-padding;
+
+        @include breakpoint(tablet) {
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        a {
+            display: block;
+            position: relative;
+
+            max-width: 300px;
+
+            @include breakpoint(tablet) {
+                width: 48%;
+            }
+            margin-bottom: 1em;
+        }
+        img {
+            width: 100%;
+        }
+
+        // Rules specific to Science
+        a:nth-of-type(2) {
+            text-align: center;
+            margin: 1em 0 2.5em;
+            img {
+                width: 70%;
+            }
+        }
+    }
+}

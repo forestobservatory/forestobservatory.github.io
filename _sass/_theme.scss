@@ -1,0 +1,91 @@
+$cfo-black:        #222222 !default;
+$cfo-green:        #134F3A !default;
+$cfo-orange:       #F4A740 !default;
+$cfo-yellow:       #FDD47D !default;
+$cfo-white:        #FFFFFF !default;
+$cfo-beige:        #FDEFDC !default;
+$cfo-gray:         #F2F2F2 !default;
+
+$text-color:       $cfo-black !default;
+$background-color: $cfo-white !default;
+$brand-color:      $cfo-orange !default;
+$highlight-color:  $cfo-yellow !default;
+$dark-shade-color: #cfo-green !default;
+
+$header-font:      'Poppins', sans-serif !default;
+$text-font:        'Poppins', sans-serif !default;
+
+$minimum-side-padding: .5rem;
+$tablet-side-padding: 1rem;
+$desktop-side-padding: 2rem;
+$max-content-width: 40rem;
+$curve-height: 5vw;
+$small-body-text-size: .8em;
+$header-footer-text-size: .8em;
+
+$button-top-bottom-padding: 1.1em;
+$button-left-right-padding: 2.7em;
+
+$header-animation-timing: 250ms;
+$logo-animation-timing: 200ms;
+
+/* Set form factor to specifically target padding for the form factor. By default it will include breakpoint rules. */
+@mixin standard-block-behavior($form_factor: nil) {
+    margin: 1rem auto;
+    box-sizing: border-box;
+    max-width: $max-content-width;
+
+    @if $form_factor == passthrough {
+    } @else if $form_factor == tablet {
+        padding-left: $tablet-side-padding;
+        padding-right: $tablet-side-padding;
+    } @else {
+        padding-left: $minimum-side-padding;
+        padding-right: $minimum-side-padding;
+        @include breakpoint(tablet) {
+            padding-left: $tablet-side-padding;
+            padding-right: $tablet-side-padding;
+        }
+    }
+}
+
+// Base layout styles assume modern mobile form factor. Use breakpoint() to upgrade.
+// SE: 320 x 568 (@2x)
+// 6, 6s, 7, 8: 375 x 667 (@2x)
+// 6+, 6s+, 7+, 8+ : 414 x 736 (@2x)
+// 11 Pro, X, Xs: 375 x 812 (@3x)
+// 11, Xr: 414 x 896 (@2x)
+// 11 Pro Max, Xs Max: 414 x 896 (@3x)
+// 12.9" iPad Pro: 1024 x 1366 (@2x)
+// 11" iPad Pro: 834 x 1194 (@2x)
+// 10.5" iPad Pro: 834 x 1112 (@2x)
+// 9.7" iPad: 768 x 1024 (@2x)
+@mixin breakpoint($form_factor) {
+    @if $form_factor == mac {
+        @supports (not(-webkit-overflow-scrolling: touch)) {
+            @content;
+        }
+    }
+    @if $form_factor == desktop {
+        @media only screen and (min-width: 900px) { @content; }
+    }
+    @if $form_factor == tablet {
+        @media only screen and (min-width: 650px) { @content; }
+    }
+    @if $form_factor == tiny {
+        @media only screen and (max-width: 350px) { @content; }
+    }
+}
+
+// Hamburger variables from https://github.com/jonsuh/hamburgers
+$hamburger-padding-x           : 10px !default;
+$hamburger-padding-y           : $minimum-side-padding !default;
+$hamburger-layer-width         : 20px !default;
+$hamburger-layer-height        : 2px !default;
+$hamburger-layer-spacing       : 4px !default;
+$hamburger-light-layer-color   : $cfo-white;
+$hamburger-dark-layer-color    : $cfo-black;
+$hamburger-layer-border-radius : 4px !default;
+$hamburger-hover-opacity       : 0.7 !default;
+$hamburger-active-layer-color  : $cfo-white !default;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity !default;

@@ -1,0 +1,61 @@
+---
+layout: parallax_page
+custom-css: posts/post.css
+---
+
+<header>
+<h3>{{ page.date | date: "%b %d, %Y" }}</h3>
+
+{%- if page.authors -%}
+<h3>by
+    {% assign authors = page.authors | split: ", " -%}
+    {%- for currentAuthor in authors -%}
+        {%- assign author = site.data.humans[currentAuthor] -%}
+            <a href="{{ site.baseurl }}{% link _pages/about.md %}#{{ currentAuthor }}">{{ author.full-name }}</a>
+        {% unless forloop.last %}and {% endunless %}
+    {%- endfor -%}
+</h3>
+{% endif -%}
+</header>
+
+{{ content }}
+
+{% assign previous-page = nil %}
+{% assign found-page = false %}
+{% assign found-next-page = false %}
+{% assign current-page = nil %}
+{% assign next-page = nil %}
+{% for site-page in site.posts reversed %}
+    {% if site-page.hidden %}
+        {% continue %}
+    {% endif %}
+    {% assign previous-page = current-page %}
+    {% assign current-page = next-page %}
+    {% assign next-page = site-page %}
+    {% if found-page %}
+        {% assign found-next-page = true %}
+        {% break %}
+    {% endif %}
+    {% if page == site-page %}
+        {% assign found-page = true %}
+    {% endif %}
+{% endfor %}
+{% unless found-next-page %}
+    {% assign previous-page = current-page %}
+    {% assign next-page = nil %}
+{% endunless %}
+
+<section id="post-navigation">
+    <div>
+    {% if previous-page %}
+        <h4>Previous</h4>
+        <a href="{{ previous-page.url | relative_url }}">{{ previous-page.title }}</a>
+    {% endif %}
+    </div>
+    <div>
+    {% if next-page %}
+        <h4>Next</h4>
+        <a href="{{ next-page.url | relative_url }}">{{ next-page.title }}</a>
+    {% endif %}
+    </div>
+</section>

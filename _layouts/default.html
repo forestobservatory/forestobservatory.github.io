@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo title=false %}
+    <title>{% if page.title %}{{ page.title }} | {{ site.short-site-name }}{% else %}{{ site.title }}{% endif %}</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="{{ '/assets/site/base.js' | relative_url }}"></script>
+    <script src="https://kit.fontawesome.com/3519216c34.js" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "url": "https://forestobservatory.com",
+      "logo": "https://the.forestobservatory.com/assets/site/symbol.png",
+      "slogan": "Every Tree. Mapped."
+    }
+    </script>
+    <link rel="stylesheet" href="{{ '/assets/site/base.css' | relative_url }}">
+    {%- if layout.custom-css -%}
+        {%- if layout.custom-css[0] -%}
+            {%- for css in layout.custom-css -%}
+            <link rel="stylesheet" href="{{ '/assets/site/' | append: css | append: '.css' | relative_url }}">
+            {%- endfor -%}
+        {%- else -%}
+            {%- if layout.custom-css contains "/" -%}
+            <link rel="stylesheet" href="{{ '/assets/' | append: layout.custom-css | relative_url }}">
+            {%- else -%}
+            <link rel="stylesheet" href="{{ '/assets/site/' | append: layout.custom-css | append: '.css' | relative_url }}">
+            {%- endif -%}
+        {%- endif -%}
+    {%- endif -%}
+    {%- if page.custom-css -%}
+        {%- if page.custom-css[0] -%}
+            {%- for css in page.custom-css -%}
+                {%- if css contains "/" -%}
+                <link rel="stylesheet" href="{{ '/assets/' | append: css | relative_url }}">
+                {%- else -%}
+                <link rel="stylesheet" href="{{ '/assets/site/' | append: css | append: '.css' | relative_url }}">
+                {%- endif -%}
+            {%- endfor -%}
+        {%- else -%}
+            {%- if page.custom-css contains "/" -%}
+            <link rel="stylesheet" href="{{ '/assets/' | append: page.custom-css | relative_url }}">
+            {%- else -%}
+            <link rel="stylesheet" href="{{ '/assets/site/' | append: page.custom-css | append: '.css' | relative_url }}">
+            {%- endif -%}
+        {%- endif -%}
+    {%- endif -%}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700,800,900&display=swap">
+    <link rel="icon" type="image/x-icon" href="{{ '/favicon.png' | relative_url }}">
+    <link rel="shortcut icon" sizes="196x196" href="{{ '/favicon-196.png' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/favicon-196.png' | relative_url }}">
+    <!-- <link rel="mask-icon" href="{{ '/assets/site/favicon-mask.svg' | relative_url }}" color="{{ site.salo-red }}"> -->
+    {%- if page.hero-image -%}
+    <style>
+        {%- assign hero-image-url = "/assets/site/" | append: page.hero-image -%}
+        {%- if page.hero-image contains "/" -%}
+            {%- assign hero-image-url = "/assets/" | append: page.hero-image -%}
+        {%- endif -%}
+    body > div > header::before { background-image: url("{{ hero-image-url | relative_url }}"); }
+    </style>
+    {%- endif -%}
+</head>
+{%- assign body-class = "" -%}
+{%- if layout.page-class -%}
+    {%- assign body-class = layout.page-class -%}
+{%- endif -%}
+{%- if page.page-class -%}
+    {%- assign body-class = body-class | append: " " | append: page.page-class -%}
+{%- endif -%}
+{%- unless page.hero-image -%}
+    {%- assign body-class = body-class | append: " minimized-header" -%}
+{%- endunless -%}
+<body class="{{ body-class }}">
+<nav id="site-header">
+    {%- assign site-logo-url = '/assets/site/symbol-white.svg' | relative_url -%}
+    {%- if body-class contains "dark-header" -%}
+        {%- assign site-logo-url = '/assets/site/symbol.svg' | relative_url -%}
+    {%- endif -%}
+    <a href="{{ site.baseurl }}/"><img src="{{ site-logo-url }}"/></a>
+
+    <button class="hamburger hamburger--squeeze" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <div id="header-links">
+        <a href="{{ site.baseurl }}/"><span>Home</span></a>
+        <a href="{{ site.baseurl }}{% link _pages/about.md %}" class="about"><span>About</span></a>
+        <a href="{{ site.baseurl }}{% link _pages/software.md %}" class="projects"><span>Open Software</span></a>
+        <a href="{{ site.baseurl }}{% link blog/index.html %}" class="blog"><span>Updates</span></a>
+    </div>
+</nav>
+<div>{% comment %}Parallax wrapper{% endcomment %}
+<header>
+    <div class="{% unless page.hero-text %}title-only{% endunless %}">
+        {%- if page.custom-css == "home" -%}
+        <img src="{{ '/assets/site/logo-cfo-white.svg' | relative_url }}" />
+        {%- elsif page.title -%}
+        <h1>{{ page.title | smartify }}</h1>
+        {%- endif %}
+        {%- if page.hero-text -%}
+        <h2>{{ page.hero-text | smartify }}</h2>
+        {%- endif -%}
+    </div>
+</header>
+
+<main>
+{{ content }}
+</main>
+
+<footer>
+    <div>
+        <div>
+            <a href="{{ site.baseurl }}/" alt="Home" class="no-decoration"><img src="{{ '/assets/site/logo-cfo-white.svg' | relative_url }}" alt="Forest Observatory Logo" /></a>
+        </div>
+        <div>
+            <a href="{{ site.baseurl }}/" alt="Home" class="no-decoration"><img src="{{ '/assets/site/symbol-white.svg' | relative_url }}" alt="Forest Observatory Symbol" /></a>
+        </div>
+    </div>
+    <nav>
+        <div>Observatory</div>
+        <a href="{{ site.baseurl }}{% link _pages/about.md %}">About</a>
+        <a href="{{ site.baseurl }}{% link blog/index.html %}">Announcements</a>
+        </nav>
+    <nav>
+        <div>Open Data</div>
+        <a href="{{ site.baseurl }}{% link _pages/data.md %}">Overview</a>
+        <a href="https://forestobservatory.com">California</a>
+    </nav>
+    <nav>
+        <div>Open Software</div>
+        <a href="{{ site.baseurl }}{% link _pages/software.md %}">Overview</a>
+        {% for repo in site.data.software %}
+        <a href="{{ repo.url | relative_url }}">{{ repo.name }}</a>
+        {% endfor %}
+    </nav>
+    <ul id="footer-social">
+        <li><span class="fas fa-envelope"></span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><span class="fab fa-twitter"></span><a href="https://www.twitter.com/{{ site.twitter.username }}">{{ site.twitter.username }}</a></li>
+        <li><span class="fab fa-linkedin"></span><a href="https://www.linkedin.com/company/{{ site.linkedin }}">{{ site.linkedin }}</a></li>
+        <li><p>© {{ "now" | date: "%Y" }} Salo Sciences, Inc.</p></li>
+    </ul>
+</footer>
+</div>
+
+
+
+{%- if layout.custom-js -%}
+<script type="text/javascript" src="{{ '/assets/site/' | append: layout.custom-js | append: '.js' | relative_url }}"></script>
+{%- endif -%}
+{%- if page.custom-js -%}
+    {%- if page.custom-js[0] -%}
+        {%- for js in page.custom-js -%}
+            {%- if js contains "/" -%}
+            <script type="text/javascript" src="{{ '/assets/' | append: js | relative_url }}"></script>
+            {%- else -%}
+            <script type="text/javascript" src="{{ '/assets/site/' | append: js | append: '.js' | relative_url }}"></script>
+            {%- endif -%}
+        {%- endfor -%}
+    {%- else -%}
+        {%- if page.custom-js contains "/" -%}
+        <script type="text/javascript" src="{{ '/assets/' | append: page.custom-js | relative_url }}"></script>
+        {%- else -%}
+        <script type="text/javascript" src="{{ '/assets/site/' | append: page.custom-js | append: '.js' | relative_url }}"></script>
+        {%- endif -%}
+    {%- endif -%}
+{%- endif -%}
+
+{% if jekyll.environment == 'production' and site.google_analytics %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125578514-1"></script>
+<script>
+  if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125578514-1');
+  }
+</script>
+{% endif %}
+</body>
+</html>

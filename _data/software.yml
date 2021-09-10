@@ -1,0 +1,20 @@
+-
+  name: Forest Observatory API
+  url: https://github.com/forestobservatory/cfo-api
+  icon: /assets/software/icon-cfo-api.png
+  description: Python wrappers for accessing Forest Observatory data via the Public API.
+-
+  name: Elapid
+  url: https://earth-chris.github.io/elapid
+  icon: /assets/software/icon-elapid.png
+  description: Contemporary species distribution modeling tools for Python.
+-
+  name: Earth Library
+  url: https://earth-chris.github.io/earthlib
+  icon: /assets/software/icon-earthlib.png
+  description: Global land cover reference spectra, and tools for working with them in Earth Engine.
+-
+  name: Giants
+  url: https://github.com/forestobservatory/giants
+  icon: /assets/software/icon-giants.png
+  description: Basic machine learning optimization support for scikit-learn.

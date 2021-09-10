@@ -1,0 +1,68 @@
+# site settings
+title: The Forest Observatory
+short-site-name: Forest Observatory
+author:
+  twitter: forestobs
+email: info@forestobservatory.com
+city: San Francisco, California
+year: 2021
+description: A data-driven forest monitoring system that maps ecological change—from space.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://the.forestobservatory.com"
+google_analytics: true
+
+# layout settings
+show_excerpts: true
+paginate: 5
+paginate_path: "/blog/page:num/"
+collections:
+    blog:
+      collections_dir: .
+
+# scroll settings
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "parallax_page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /blog/:year/:month/:title
+  -
+    scope:
+      path: "projects"
+      type: "posts"
+    values:
+      layout: "parallax_page"
+      categories: "projects"
+      page-class: "projects"
+      permalink: /projects/:title
+      hidden: true
+
+# separator for post excerpts on feed
+excerpt_separator: <!--more-->
+
+# social settings
+twitter:
+  username: forestobs
+  card: summary
+linkedin: forestobservatory
+logo: /assets/site/symbol.svg
+
+# build settings
+markdown: kramdown
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
+include:
+  - '_pages'
+  - 'tags'
+  - 'categories'
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-redirect-from
