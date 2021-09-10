@@ -1,6 +1,6 @@
 ---
 layout: parallax_page
-custom-css: posts/post.css
+custom-css: post
 ---
 
 <header>
@@ -10,8 +10,8 @@ custom-css: posts/post.css
 <h3>by
     {% assign authors = page.authors | split: ", " -%}
     {%- for currentAuthor in authors -%}
-        {%- assign author = site.data.humans[currentAuthor] -%}
-            <a href="{{ site.baseurl }}{% link _pages/about.md %}#{{ currentAuthor }}">{{ author.full-name }}</a>
+        {%- assign author = site.data.authors[currentAuthor] -%}
+            <a href="https://www.twitter.com/{{ author.twitter }}">{{ author.full-name }}</a>
         {% unless forloop.last %}and {% endunless %}
     {%- endfor -%}
 </h3>
