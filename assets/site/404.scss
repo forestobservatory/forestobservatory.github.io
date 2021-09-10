@@ -9,11 +9,10 @@ main {
     }
 }
 
-img {
-    width: 100%;
-}
-
 .clearcut {
+    img {
+        width: 100%;
+    }
     @include breakpoint(tablet) {
         width: 75%;
         display: block;
