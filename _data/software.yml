@@ -17,4 +17,4 @@
   name: Giants
   url: https://github.com/forestobservatory/cfo-big-trees
   icon: /assets/software/icon-giants.png
-  description: Basic machine learning optimization support for scikit-learn.
+  description: Basic machine learning optimization support, developed to identify big trees.
