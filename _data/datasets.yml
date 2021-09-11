@@ -1,0 +1,63 @@
+vegetation:
+  -
+    name: Canopy Cover
+    description: The horizontal area covered by tree canopies. Maps community type & fire regime, as well as habitat for tree-dwelling species.
+    icon: /assets/data/canopy-cover.svg
+    url:
+  -
+    name: Canopy Height
+    description: The distance between the ground and the top of the canopy. Canopy height is a good proxy for aboveground biomass.
+    icon: /assets/data/tree-height.svg
+    url:
+  -
+    name: Canopy Base Height
+    description: The distance between the ground and the lowest branches in the canopy. Predicts whether a surface fire transitions to a canopy fire.
+    icon: /assets/data/base-height.svg
+    url:
+  -
+    name: Canopy Bulk Density
+    description: The mass of available fuel that burns in a canopy fire—typically the leaves and small branches— divided by the volume of the crown.
+    icon: /assets/data/bulk-density.svg
+    url:
+  -
+    name: Surface Fuel Model
+    description: A model describing vegetation fuel type, size class, depth, moisture content and heat content. Determines fire behavior patterns like flame length and spread rate.
+    icon: /assets/data/surface-fuels.svg
+    url:
+  -
+    name: Ladder Fuel Density
+    description: The amount of brush and/or understory fuels. Maps where low-lying surface fires are most likely transition to canopy fires.
+    icon: /assets/data/ladder-fuels.svg
+    url:
+  -
+    name: Green Vegetation Abundance
+    description: The amount of green, leafy vegetation. This includes all photosynthetic tissues.
+    icon: /assets/data/green-vegetation.svg
+    url:
+  -
+    name: Dry Vegetation Abundance
+    description: The amount of dry or dead vegetation, including dead grass, timber slash, dry brush, and leaf litter.
+    icon: /assets/data/dry-vegetation.svg
+    url:
+  -
+    name: Vertical Layer Count
+    description: The number of distinct vertical canopy layers. Vertical layer count is a proxy for leaf area index, and maps canopy complexity.
+    icon: /assets/data/vertical-layers.svg
+    url:
+
+wildfire:
+  -
+    name: Burn Severity
+    description: A metric of the amount of vegetation consumed in a fire, as well as the heat at which it burned.
+    icon: /assets/data/burn-severity.svg
+    url:
+  -
+    name: Active Hot Spots
+    description: Active wildfire hotspots measured by VIIRS, a satellite that measures thermal anomalies twice daily.
+    icon: /assets/data/fire-hot-spots.svg
+    url:
+  -
+    name: Daily Weather
+    description: Wind speed, wind direction, temperature, and humidity. Determines the rate of fire spread, especially in grass or shrub fires.
+    icon: /assets/data/wind-speed.svg
+    url:
