@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     text-decoration: none;
-    color: $cfo-orange;
+    color: $cfo-green;
     font-weight: 700;
 
     &:hover {
@@ -44,7 +44,7 @@ a {
         text-underline-offset: .2em;
     }
     &:visited {
-        color: $cfo-orange;
+        color: $cfo-green;
     }
 }
 
@@ -623,6 +623,13 @@ body > div > footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
+    a {
+      color: $cfo-orange;
+      &:visited {
+          color: $cfo-orange;
+      }
+    }
 
     @include breakpoint(tiny) {
         justify-content: flex-start;
