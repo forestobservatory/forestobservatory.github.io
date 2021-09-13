@@ -41,6 +41,7 @@ a {
 
     &:hover {
         text-decoration: underline;
+        text-decoration-color: $cfo-orange;
         text-underline-offset: .2em;
     }
     &:visited {
@@ -59,10 +60,10 @@ a.no-decoration:hover {
 }
 
 body {
-    &.approach #header-links .approach span,
+    &.about #header-links .about span,
     &.blog #header-links .blog span,
-    &.projects #header-links .projects span,
-    &.about #header-links .about span {
+    &.data #header-links .data span,
+    &.software #header-links .software span {
         border-bottom: 2px solid $cfo-white;
 
         @include breakpoint(tablet) {
@@ -71,11 +72,11 @@ body {
     }
 
     @include breakpoint(tablet) {
-        &.approach #site-header.minimized #header-links .approach,
+        &.about #site-header.minimized #header-links .about,
         &.blog #site-header.minimized #header-links .blog,
-        &.projects #site-header.minimized #header-links .projects,
-        &.about #site-header.minimized #header-links .about {
-            color: $text-color;
+        &.data #site-header.minimized #header-links .data,
+        &.software #site-header.minimized #header-links .software {
+            color: $cfo-white;
         }
     }
 
@@ -137,7 +138,7 @@ body {
                 height: 100%;
                 content: " ";
                 z-index: -1;
-                background-image: url("symbol.svg");
+                background-image: url("symbol-white.svg");
                 background-size: contain;
                 background-repeat: no-repeat;
                 opacity: 0;
@@ -428,7 +429,7 @@ body {
     #site-header.minimized, &.minimized-header #site-header {
         transition: background-color $header-animation-timing 50ms, border-color $header-animation-timing 50ms;
 
-        background-color: $cfo-white;
+        background-color: $cfo-green;
         border-color: $brand-color;
 
         > a {
@@ -508,7 +509,7 @@ body {
         }
 
         a:hover span {
-            border-bottom: 2px solid $brand-color;
+            border-bottom: 2px solid $cfo-orange;
         }
 
         a:first-child {
