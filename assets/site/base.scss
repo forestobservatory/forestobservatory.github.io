@@ -335,7 +335,7 @@ body {
                 &,
                 &::before,
                 &::after {
-                    background-color: $text-color;
+                    background-color: $hamburger-dark-layer-color;
                 }
             }
         }
