@@ -10,7 +10,7 @@
    viewBox="0 0 160 160"
    version="1.1"
    id="svg197"
-   sodipodi:docname="symbol-earthlib.svg"
+   sodipodi:docname="icon-earthlib.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    inkscape:export-filename="/home/cba/earthlib/docs/img/favicon.png"
    inkscape:export-xdpi="19.190001"
@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -36,8 +36,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2666"
-     inkscape:window-height="1616"
+     inkscape:window-width="3840"
+     inkscape:window-height="2000"
      id="namedview199"
      showgrid="false"
      inkscape:zoom="4.17193"
@@ -86,7 +86,7 @@
            id="satellite"
            class="cls-4"
            d="M152,24a16,16,0,0,0-27.86-10.71,80.91,80.91,0,0,1,9.17,7.09,4.56,4.56,0,0,0,6.31,6.31,80.91,80.91,0,0,1,7.09,9.17A16,16,0,0,0,152,24Z"
-           style="fill:#ffffff;fill-opacity:1" />
+           style="fill:#174f3a;fill-opacity:1" />
         <path
            inkscape:connector-curvature="0"
            id="path74"
