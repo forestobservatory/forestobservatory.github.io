@@ -1,8 +1,9 @@
 ---
 title: High Resolution Forest Data
 hero-image: hero-strix.jpg
-page-class: projects
+page-class: data
 custom-css: thumbnail-list
+permalink: data
 ---
 
 Our regularly-updated, high resolution data is designed to be used by researchers, landowners & policymakers. The data are freely available for non-commercial use by scientists, government agencies, and non-profits. [Sign up for an account](https://forestobservatory.com/signup) to get started.

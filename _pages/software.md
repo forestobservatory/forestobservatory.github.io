@@ -1,8 +1,9 @@
 ---
 title: Open Source Software
 hero-image: hero-strix.jpg
-page-class: projects
+page-class: software
 custom-css: thumbnail-list
+permalink: software
 ---
 
 We do open source software, too.
