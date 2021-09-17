@@ -1,0 +1,13 @@
+---
+---
+@charset "utf-8";
+@import "theme";
+
+.legal {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: normal;
+  &:hover {
+      text-decoration: none;
+  }
+}
