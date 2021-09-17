@@ -1,7 +1,6 @@
 ---
 ---
 @charset "utf-8";
-
 @import "theme";
 
 body {
@@ -323,4 +322,31 @@ main {
             }
         }
     }
+}
+
+.button {
+  background-color: $cfo-green;
+  border-radius: 3px;
+  color: #ffffff;
+  padding: 10px 15px;
+  margin-top: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button:hover {
+  box-shadow: 2px 2px 8px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-section {
+  text-align: center;
+  margin: auto;
 }
