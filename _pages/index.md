@@ -6,9 +6,7 @@ page-class: no-maximized-logo
 permalink: index.html
 ---
 
-Welcome to the Forest Observatory, a data-driven forest monitoring system.
-
-We map environmental change—primarily shifts in forest structure & wildfire risk—from space.
+**Welcome to the Forest Observatory, a data-driven monitoring system mapping changes in forest structure & wildfire risk from space.**
 
 <div class="button-container">
   <section class="button-section">
@@ -16,13 +14,17 @@ We map environmental change—primarily shifts in forest structure & wildfire ri
   </section>
 </div>
 
-Our regularly-updated, tree-level data are freely available for non-commercial use by scientists, government agencies, and non-profits. [Get in touch](mailto:info@forestobservatory.com) if you’re interested in commercial use.
+# Impact at Scale
 
 Over 150 organizations now use The Forest Observatory to develop data-driven land management strategies that increase wildfire resilience—for forests and communities—enabling people and nature to thrive.
 
-Interested in using our data? Read more about the [available datasets]({{ site.baseurl }}{% link _pages/terms-of-use.md %}). Developers, get started with the data in the API documentation.
+We support these organizations by providing [open data]({{ site.baseurl }}{% link _pages/data.md %}) on forest change and [open software]({{ site.baseurl }}{% link _pages/software.md %}) for ecological mapping.
 
-Developing these strategies will require public and private partnerships across organizations, using shared information. We built the California Forest Observatory to support these collaborations.
+Interested in using Forest Observatory data? Read more about the [available datasets]({{ site.baseurl }}{% link _pages/terms-of-use.md %}) or access the data via the [public API](https://github.com/forestobservatory/cfo-api).
+
+Regularly-updated, tree-level data are freely available for non-commercial use by scientists, government agencies, and non-profits.
+
+[Get in touch](mailto:info@forestobservatory.com) if you’re interested in commercial use.
 
 <section id="partners">
     <h1>Our Partners</h1>
