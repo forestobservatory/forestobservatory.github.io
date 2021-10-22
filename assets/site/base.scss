@@ -576,7 +576,7 @@ body:not(.minimized-header) > div {
 
         > header::before {
             transform-origin: 0 0;
-            transform: translateZ(-1px) scale(2);
+            transform: translateZ(-1px) scale(1);
         }
     }
 }
